@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City E-Waste Collection & Recycling Portal</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(135deg, #e8f5e9, #c8e6c9); color: #333; }
+        .container { width: 850px; margin: 40px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+        h1 { text-align: center; color: #2e7d32; margin-bottom: 5px; }
+        .subtitle { text-align: center; color: #555; margin-bottom: 30px; font-weight: bold; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #2e7d32; border-bottom: 2px solid #a5d6a7; padding-bottom: 8px; }
+        
+        /* Dashboard Stats */
+        .dashboard { display: flex; justify-content: space-between; margin-bottom: 25px; gap: 10px; }
+        .stat-card { flex: 1; background: #f1f8e9; border: 1px solid #c5e1a5; padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-card h3 { margin: 0 0 10px 0; color: #558b2f; font-size: 14px; }
+        .stat-card .count { font-size: 24px; font-weight: bold; color: #33691e; }
+        
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; font-size: 14px; }
+        th { background-color: #4caf50; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        /* Badges */
+        .status-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; color: white; }
+        .status-active { background-color: #2e7d32; }
+        .status-maintenance { background-color: #ef6c00; }
+        
+        .footer { text-align: center; margin-top: 40px; color: #666; font-size: 13px; border-top: 1px solid #ddd; padding-top: 15px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>City Administration</h1>
+    <div class="subtitle">E-Waste Collection & Recycling Portal</div>
+
+    <!-- Processing Status Dashboard -->
+    <div class="section">
+        <h2>E-Waste Processing Status Dashboard</h2>
+        <div class="dashboard">
+            <div class="stat-card"><h3>Items Collected</h3><div class="count">1,245</div></div>
+            <div class="stat-card"><h3>Awaiting Processing</h3><div class="count">320</div></div>
+            <div class="stat-card"><h3>Under Recycling</h3><div class="count">450</div></div>
+            <div class="stat-card"><h3>Successfully Recycled</h3><div class="count">475</div></div>
+        </div>
+    </div>
+
+    <!-- Collection Centres Database -->
+    <div class="section">
+        <h2>Registered Collection Centres</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Centre Name</th>
+                    <th>Location</th>
+                    <th>Accepted Categories</th>
+                    <th>Collection Schedule</th>
+                    <th>Recycling Instructions</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Downtown EcoHub</b></td>
+                    <td>102 Green Lane</td>
+                    <td>Mobile Phones, Laptops, Batteries</td>
+                    <td>Mon-Wed: 9 AM - 5 PM</td>
+                    <td>Remove personal accounts/data before dropping off.</td>
+                    <td><span class="status-badge status-active">Operational</span></td>
+                </tr>
+                <tr>
+                    <td><b>Metro Recycling Depot</b></td>
+                    <td>450 Industrial Parkway</td>
+                    <td>Televisions, Laptops, Monitors</td>
+                    <td>Tue-Thu: 8 AM - 4 PM</td>
+                    <td>Keep screens intact to prevent hazardous leaks.</td>
+                    <td><span class="status-badge status-active">Operational</span></td>
+                </tr>
+                <tr>
+                    <td><b>Battery & Small Electronics Vault</b></td>
+                    <td>78 Retail Boulevard</td>
+                    <td>Batteries, Chargers, Smartwatches</td>
+                    <td>Fri-Sat: 10 AM - 6 PM</td>
+                    <td>Tape battery terminals before depositing.</td>
+                    <td><span class="status-badge status-active">Operational</span></td>
+                </tr>
+                <tr>
+                    <td><b>Suburban E-Waste Point</b></td>
+                    <td>12 Civic Center Circle</td>
+                    <td>Mobile Phones, Laptops, Tablets</td>
+                    <td>Mon-Fri: 9 AM - 4 PM</td>
+                    <td>Remove SIM cards and peripheral covers.</td>
+                    <td><span class="status-badge status-maintenance">Maintenance</span></td>
+                </tr>
+                <tr>
+                    <td><b>Grand Central Reclamation Facility</b></td>
+                    <td>900 Logistics Way</td>
+                    <td>Televisions, Refrigerators, Large Electronics</td>
+                    <td>Daily: 7 AM - 7 PM</td>
+                    <td>Schedule curbside drop-off for items over 50 lbs.</td>
+                    <td><span class="status-badge status-active">Operational</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Administrative Updates Section -->
+    <div class="section">
+        <h2>Administrator Noticeboard (Revised Schedules)</h2>
+        <p style="background: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; font-size: 14px; line-height: 1.5;">
+            <strong>Holiday Schedule Adjustment:</strong> All municipal collection facilities will operate under reduced hours (10:00 AM to 2:00 PM) during the upcoming civic holiday weekend. Please prepare items accordingly.
+        </p>
+    </div>
+
+    <div class="footer">
+        Automated Deployment: Jenkins Pipeline • Containerization: Docker • Orchestration: Kubernetes (K8s)
+    </div>
+</div>
+</body>
+</html>

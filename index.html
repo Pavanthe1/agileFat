@@ -11,11 +11,11 @@
         .section { margin-bottom: 30px; }
         .section h2 { color: #2e7d32; border-bottom: 2px solid #a5d6a7; padding-bottom: 8px; }
         
-        /* Dashboard Stats */
-        .dashboard { display: flex; justify-content: space-between; margin-bottom: 25px; gap: 10px; }
-        .stat-card { flex: 1; background: #f1f8e9; border: 1px solid #c5e1a5; padding: 15px; border-radius: 8px; text-align: center; }
-        .stat-card h3 { margin: 0 0 10px 0; color: #558b2f; font-size: 14px; }
-        .stat-card .count { font-size: 24px; font-weight: bold; color: #33691e; }
+        /* Dashboard Stats Grid */
+        .dashboard { display: flex; justify-content: space-between; margin-bottom: 25px; gap: 15px; }
+        .stat-card { flex: 1; background: #f1f8e9; border: 1px solid #c5e1a5; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .stat-card h3 { margin: 0 0 10px 0; color: #558b2f; font-size: 13px; text-transform: uppercase; }
+        .stat-card .count { font-size: 26px; font-weight: bold; color: #33691e; }
         
         /* Table Styling */
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
@@ -23,10 +23,14 @@
         th { background-color: #4caf50; color: white; }
         tr:nth-child(even) { background-color: #f9f9f9; }
         
-        /* Badges */
-        .status-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; color: white; }
+        /* Status Indicator Badges */
+        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; color: white; text-align: center; }
         .status-active { background-color: #2e7d32; }
         .status-maintenance { background-color: #ef6c00; }
+        
+        /* Admin Section */
+        .admin-schedule { background: #fff3e0; border-left: 5px solid #ff9800; padding: 20px; border-radius: 4px; font-size: 14px; line-height: 1.6; }
+        .admin-schedule strong { color: #e65100; }
         
         .footer { text-align: center; margin-top: 40px; color: #666; font-size: 13px; border-top: 1px solid #ddd; padding-top: 15px; }
     </style>
@@ -36,18 +40,30 @@
     <h1>City Administration</h1>
     <div class="subtitle">E-Waste Collection & Recycling Portal</div>
 
-    <!-- Processing Status Dashboard -->
+    <!-- E-Waste Processing Status Dashboard (Summary Counts) -->
     <div class="section">
         <h2>E-Waste Processing Status Dashboard</h2>
         <div class="dashboard">
-            <div class="stat-card"><h3>Items Collected</h3><div class="count">1,245</div></div>
-            <div class="stat-card"><h3>Awaiting Processing</h3><div class="count">320</div></div>
-            <div class="stat-card"><h3>Under Recycling</h3><div class="count">450</div></div>
-            <div class="stat-card"><h3>Successfully Recycled</h3><div class="count">475</div></div>
+            <div class="stat-card">
+                <h3>Items Collected</h3>
+                <div class="count">1,245</div>
+            </div>
+            <div class="stat-card">
+                <h3>Awaiting Processing</h3>
+                <div class="count">320</div>
+            </div>
+            <div class="stat-card">
+                <h3>Under Recycling</h3>
+                <div class="count">450</div>
+            </div>
+            <div class="stat-card">
+                <h3>Successfully Recycled</h3>
+                <div class="count">475</div>
+            </div>
         </div>
     </div>
 
-    <!-- Collection Centres Database -->
+    <!-- Collection Centres with Status Indicators -->
     <div class="section">
         <h2>Registered Collection Centres</h2>
         <table>
@@ -58,7 +74,7 @@
                     <th>Accepted Categories</th>
                     <th>Collection Schedule</th>
                     <th>Recycling Instructions</th>
-                    <th>Status</th>
+                    <th>Processing Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -106,16 +122,17 @@
         </table>
     </div>
 
-    <!-- Administrative Updates Section -->
+    <!-- Updated Collection Schedule Section for Administrators -->
     <div class="section">
-        <h2>Administrator Noticeboard (Revised Schedules)</h2>
-        <p style="background: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; font-size: 14px; line-height: 1.5;">
-            <strong>Holiday Schedule Adjustment:</strong> All municipal collection facilities will operate under reduced hours (10:00 AM to 2:00 PM) during the upcoming civic holiday weekend. Please prepare items accordingly.
-        </p>
+        <h2>Administrator Noticeboard (Live Collection Updates)</h2>
+        <div class="admin-schedule">
+            <strong>⚠️ REVISED COLLECTION SCHEDULE NOTICE:</strong><br>
+            All municipal collection facilities will operate under reduced hours (10:00 AM to 2:00 PM) during the upcoming civic holiday weekend. In addition, unexpected maintenance at the <em>Suburban E-Waste Point</em> will route smartphone drop-offs to the <em>Downtown EcoHub</em> until further notice. Please verify center status indicators before visiting.
+        </div>
     </div>
 
     <div class="footer">
-        Automated Deployment: Jenkins Pipeline • Containerization: Docker • Orchestration: Kubernetes (K8s)
+        Automated Deployment: Jenkins Pipeline • Containerization: Docker Hub
     </div>
 </div>
 </body>
